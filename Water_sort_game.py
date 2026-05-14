@@ -17,6 +17,14 @@ class WaterContainer:
             self.vial.append(color)
         
     def pour(self, target: WaterContainer):
+        if self.canPour(target):
+            while self.canPour(target):
+                self.pour(target)
+        else:
+            return False
+        return True
+    
+    def canPour(self, target: WaterContainer):
         # target must have space
         if len(target.vial) >= target.size:
             print("target is full")
@@ -30,15 +38,7 @@ class WaterContainer:
             print("giver and target colors do not match")
             return False
         
-        # pour
-        color = self.vial.pop()
-        target.vial.append(color)
-        if self.vial and color == self.vial[-1]:
-            # longer pour for duplicate colors
-            print("continue pouring duplicate colors")
-            self.pour(target)
         return True
-        
         
 
 class WaterSortSolver:
