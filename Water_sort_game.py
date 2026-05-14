@@ -40,10 +40,19 @@ class WaterContainer:
         
         return True
         
+# backtracking approach to attempt to pour into every other vial
 
+# solved state: each vials either contains the same color or is empty 
+
+# Recursive case
+# pour vial i into vial j
+# increment vial i
 class WaterSortSolver:
     def __init__(self):
         pass
     
     def solve():
+        pass
+    
+    def verifySolve():
         pass
